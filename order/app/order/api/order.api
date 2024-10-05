@@ -1,0 +1,21 @@
+syntax = "v1"
+
+info (
+	author: "xypf"
+	email: "2992247892@qq.com"
+)
+
+type (
+	QuickCreateReq {
+		UserId  int64 `json:"userId"`
+		GoodsId int64 `json:"goodsId"`
+		Num     int64 `json:"num"`
+	}
+	QuickCreateResp {
+	}
+)
+
+service order-api {
+	@handler create
+	post /order/quickCreate (QuickCreateReq) returns (QuickCreateResp)
+}

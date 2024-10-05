@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package pb;
+option go_package="./pb";
+
+message DeductReq {
+    int64 goods_id = 1;
+    int64 num = 2;
+}
+message DeductResp {
+}
+
+service stock {
+  rpc deduct(DeductReq) returns(DeductResp);
+  rpc deductRollback(DeductReq) returns(DeductResp);
+}
